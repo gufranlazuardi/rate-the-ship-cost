@@ -1,21 +1,17 @@
-import { CourierResult, LocationDetails } from "../api/type";
-
-export type Response<T = any> = {
+export interface RajaOngkirResponse<T = any> {
   rajaongkir: T;
-};
+}
 
-export interface RajaOngkirResponse {
-  query: {
-    origin: string;
-    destination: string;
-    weight: number;
-    courier: string;
-  };
-  status: {
-    code: number;
-    description: string;
-  };
-  origin_details: LocationDetails;
-  destination_details: LocationDetails;
-  results: CourierResult[];
+export interface Query {
+  id?: string;
+  province?: string;
+  origin?: string;
+  destination?: string;
+  weight?: number;
+  courier?: string;
+}
+
+export interface Status {
+  code: number;
+  description: string;
 }
