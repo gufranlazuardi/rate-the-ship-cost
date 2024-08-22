@@ -9,8 +9,12 @@ export default function Home() {
     useState<ProvinceAPIResponse | null>(null);
 
   async function fetchProvinceData() {
+    console.log('test call');
+
     try {
       const result = await getProvince();
+      console.log(result);
+      
       setProvince(result);
     } catch (error: any) {
       toast({
@@ -22,6 +26,7 @@ export default function Home() {
   }
 
   useEffect(() => {
+    console.log('oi');
     fetchProvinceData();
   }, []);
 
